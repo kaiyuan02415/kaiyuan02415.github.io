@@ -10,7 +10,7 @@ redirect_from:
 
 I'm Kaiyuan Deng(邓凯元)
 
-I received my bachelor's degree from University of Electronic Science and Technology of China in 2024.
+I received my bachelor's degree from University of Electronic Science and Technology of China(UESTC) in 2024.
 
 A data-driven personal website
 ======
