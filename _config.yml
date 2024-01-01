@@ -86,7 +86,7 @@ author:
   location         : "Location"
   employer         :
   pubmed           : 
-  googlescholar    : ""
+  googlescholar    : "www.baidu.com"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/kaiyuan02415"
+  github           : "kaiyuan02415"
   google_plus      :
   keybase          :
   instagram        :
