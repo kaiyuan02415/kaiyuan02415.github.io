@@ -14,6 +14,6 @@ I received my bachelor's degree from University of Electronic Science and Techno
 
 Education
 ======
-[University of Electronic Science and Technology of China](https://www.uestc.edu.cn/)  Sep. 2020 - Jun. 2024 (GPA:3.83/4.0) 
-B.Eng in EE, advised by Prof.[Hong Qu](https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11006?yxsh=08) 
+[University of Electronic Science and Technology of China](https://www.uestc.edu.cn/)   Sep. 2020 - Jun. 2024
+B.Eng in EE,  advised by Prof.[Hong Qu](https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11006?yxsh=08) 
 
