@@ -78,6 +78,9 @@ analytics:
     tracking_id          :
 
 
+# 需要查看本文件体是否提供了URL的开头，来判断自己的网址怎么输入
+# 比如，github提供了开头，然而google scholar没有提供
+# 没有提供的需要以“https://”开头，否则网站的跳转方式为：base_url/xxx，这样显然是错误的
 # Site Author
 author:
   name             : "Kaiyuan Deng"
@@ -86,7 +89,7 @@ author:
   location         : "Location"
   employer         :
   pubmed           : 
-  googlescholar    : "https://www.baidu.com"
+  googlescholar    : ""
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
