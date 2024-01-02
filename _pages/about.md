@@ -14,6 +14,6 @@ I received my bachelor's degree from University of Electronic Science and Techno
 
 Education
 ======
-[University of Electronic Science and Technology of China](https://www.uestc.edu.cn/)   Sep. 2020 - Jun. 2024 <br/> 
-B.Eng in EE,  advised by Prof.[Hong Qu](https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11006?yxsh=08) 
+![Markdown Logo](https://example.com/logo.png "Markdown")    [University of Electronic Science and Technology of China](https://www.uestc.edu.cn/)  &ensp  Sep. 2020 - Jun. 2024 <br/> 
+                                                             B.Eng in EE, &ensp advised by Prof.[Hong Qu](https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11006?yxsh=08) 
 
