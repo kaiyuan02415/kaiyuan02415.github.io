@@ -5,13 +5,13 @@ permalink: /publications/
 author_profile: true
 ---
 
+<!--去_publication修改内容，这个页面是格式设置-->
+
 {% if author.googlescholar %}
   You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
 {% endif %}
 
 {% include base_path %}
-
-Test accessibility
 
 {% for post in site.publications reversed %}
   {% include archive-single.html %}
