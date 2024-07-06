@@ -10,7 +10,7 @@ redirect_from:
 
 I'm Kaiyuan Deng(邓凯元)
 
-I'm currently a Ph.D.student in the Clemson University. My supervisor is Professor [Xiaolong Ma](https://xiaolongma2016.com/). 
+I'm currently a Ph.D.student in the Clemson University. My supervisor is Professor [Xiaolong Ma](https://xiaolongma2016.com/). <br/>
 I received my bachelor's degree from University of Electronic Science and Technology of China[(UESTC)](https://www.uestc.edu.cn/) in July 2024.
 
 Education
