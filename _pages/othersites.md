@@ -10,7 +10,7 @@ redirect_from:
 
 {% include base_path %}
 
-Know more about my life and hobbies : [Blibli](https://space.bilibili.com/509842792/video)
+More about my life and hobbies : [Blibli](https://space.bilibili.com/509842792/video)
 
 
 
