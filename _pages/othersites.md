@@ -4,7 +4,8 @@ title: "Other Sites"
 permalink: /othersites/
 author_profile: true
 redirect_from:
-  - /youqinglianjie
+  - /moreabout
+  - /gengduo
 ---
 
 {% include base_path %}
