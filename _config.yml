@@ -85,14 +85,14 @@ analytics:
 author:
   name             : "Kaiyuan Deng"
   avatar           : "Avator.JPG"
-  bio              : "Ph.D student at Clemson University"
-  location         : "SC, USA"
+  bio              : "Ph.D student at the University of Arizona"
+  location         : "Tucson, USA"
   employer         :
   pubmed           : 
-  googlescholar    : ""
+  googlescholar    : "https://scholar.google.com/citations?user=_a1vLEYAAAAJ&hl=en"
   email            : "d1571502273@outlook.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
+  uri              : 
   bitbucket        :
   codepen          :
   dribbble         :
@@ -110,7 +110,7 @@ author:
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
+  steam            : "https://steamcommunity.com/profiles/76561198819117649/"
   tumblr           :
   twitter          :
   vine             :
