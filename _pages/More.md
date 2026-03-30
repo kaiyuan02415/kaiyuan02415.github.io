@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "Other Sites"
-permalink: /othersites/
+title: "More"
+permalink: /More/
 author_profile: true
 redirect_from:
   - /moreabout
