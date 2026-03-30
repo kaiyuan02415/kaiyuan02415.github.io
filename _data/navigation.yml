@@ -3,16 +3,13 @@ main:
   - title: "About"
     url: /about/
 
-  - title: "Education"
-    url: /education/
-
   - title: "Publications"
     url: /publications/
     
-  - title: "CV"
+  - title: "Experience"
     url: /cv/
         
-  - title: "Other Sites"
+  - title: "More"
     url: /othersites/
     
 
