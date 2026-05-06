@@ -1,13 +1,15 @@
 ---
 interface Props {
   text: string;
+  response?: string;
   attribution?: string;
 }
-const { text, attribution } = Astro.props;
+const { text, response, attribution } = Astro.props;
 ---
 
 <aside class="page-quote">
   <p class="page-quote-text">&ldquo;{text}&rdquo;</p>
+  {response && <p class="page-quote-response">&ldquo;{response}&rdquo;</p>}
   {attribution && <p class="page-quote-attr">{attribution}</p>}
 </aside>
 
@@ -25,6 +27,15 @@ const { text, attribution } = Astro.props;
     font-style: italic;
     color: var(--fg-muted);
     font-size: 1.05rem;
+    line-height: 1.6;
+    letter-spacing: 0.005em;
+  }
+  .page-quote-response {
+    margin: 0.85rem 0 0;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--fg-subtle);
+    font-size: 0.95rem;
     line-height: 1.6;
     letter-spacing: 0.005em;
   }
