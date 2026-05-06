@@ -1,0 +1,72 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import PageQuote from "../components/PageQuote.astro";
+---
+
+<PageLayout title="More" heading="More">
+  <p>A bit more about me beyond research: hobbies and things I enjoy.</p>
+
+  <section class="block">
+    <h2 class="section-title">Around the Web</h2>
+    <ul class="links">
+      <li>
+        <span class="k">BiliBili</span>
+        <a class="under" href="https://space.bilibili.com/509842792/video"
+          >space.bilibili.com/509842792</a>
+      </li>
+      <li>
+        <span class="k">Steam</span>
+        <a class="under" href="https://steamcommunity.com/profiles/76561198819117649/"
+          >steamcommunity.com/…/76561198819117649</a>
+      </li>
+      <li>
+        <span class="k">GitHub</span>
+        <a class="under" href="https://github.com/kaiyuan02415"
+          >github.com/kaiyuan02415</a>
+      </li>
+    </ul>
+  </section>
+
+  <PageQuote
+    text="You mistake stars reflected in a pond for the night sky."
+  />
+</PageLayout>
+
+<style>
+  .block {
+    margin-top: 2.25rem;
+  }
+  .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .links li {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px dashed var(--border);
+    align-items: baseline;
+  }
+  .links li:last-child {
+    border-bottom: 0;
+  }
+  .k {
+    color: var(--fg-subtle);
+    font-size: 0.86rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .under {
+    color: var(--link);
+    border-bottom: 1px solid var(--border-strong);
+    transition:
+      color var(--t-base),
+      border-color var(--t-base);
+  }
+  .under:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--fg);
+  }
+</style>

@@ -1,0 +1,271 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import PageQuote from "../components/PageQuote.astro";
+
+interface Pub {
+  title: string;
+  authors: string;
+  venue: string;
+  year: number;
+  abstract: string;
+  links?: { label: string; href: string }[];
+}
+
+const publications: Pub[] = [
+  {
+    title:
+      "Forget-It-All: Multi-Concept Machine Unlearning via Concept-Aware Neuron Masking",
+    authors:
+      "**Kaiyuan Deng**, Bo Hui, Gen Li, Jie Ji, Minghai Qin, Geng Yuan, Xiaolong Ma",
+    venue: "ICML 2026",
+    year: 2026,
+    abstract:
+      "FIA, a training-free framework for multi-concept unlearning in diffusion models leveraging model sparsity. Introduces Contrastive Concept Saliency to quantify each weight's contribution to a target concept, identifies Concept-Sensitive Neurons through temporal and spatial analysis, and fuses per-concept masks into a unified multi-concept mask. Operates at under 0.3% overall sparsity and achieves SOTA across multi-object, NSFW, and artistic-style unlearning tasks.",
+    links: [
+      { label: "arXiv", href: "https://arxiv.org/abs/2601.06162" },
+      { label: "Code", href: "https://github.com/kaiyuan02415/Forget-It-All" },
+    ],
+  },
+  {
+    title:
+      "Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models",
+    authors: "**Kaiyuan Deng**, Gen Li, Yang Xiao, Bo Hui, Xiaolong Ma",
+    venue: "ICLR 2026",
+    year: 2026,
+    abstract:
+      "ScaPre, a unified closed-form framework for scalable and precise large-scale concept unlearning. Combines a conflict-aware stable design (spectral trace regularization + geometry alignment) with an Informax Decoupler that confines updates to concept-relevant subspaces. Without extra data or auxiliary modules, ScaPre unlearns up to 5× more concepts than the best baseline, completing 50 concepts in 120 seconds.",
+    links: [
+      { label: "arXiv", href: "https://arxiv.org/abs/2601.06163" },
+      { label: "Code", href: "https://github.com/kaiyuan02415/ScaPre" },
+    ],
+  },
+  {
+    title:
+      "Sculpting Memory: Multi-Concept Forgetting in Diffusion Models via Dynamic Mask and Concept-Aware Optimization",
+    authors:
+      "Gen Li, Yang Xiao, Jie Ji, **Kaiyuan Deng**, Bo Hui, Linke Guo, Xiaolong Ma",
+    venue: "ICCV 2025",
+    year: 2025,
+    abstract:
+      "A novel unlearning framework combining a Dynamic Mask and a Concept-Aware Loss for multi-concept forgetting in text-to-image diffusion models. The dynamic mask adaptively updates gradient masks during optimization for selective weight modifications; the concept-aware loss enforces semantic consistency via superclass alignment and uses distillation to prevent unlearned concepts from resurfacing.",
+    links: [{ label: "arXiv", href: "https://arxiv.org/abs/2504.09039" }],
+  },
+  {
+    title:
+      "GS2E: Gaussian Splatting is an Effective Data Generator for Event Stream Generation",
+    authors:
+      "Yuchen Li*, Chaoran Feng*, Zhenyu Tang, **Kaiyuan Deng**, Wangbo Yu, Yonghong Tian, Li Yuan",
+    venue: "NeurIPS 2025 (Datasets & Benchmarks)",
+    year: 2025,
+    abstract:
+      "GS2E, a large-scale synthetic event dataset for high-fidelity 3D event-based vision, comprising 1,150+ scenes. Reconstructs photorealistic static scenes via 3D Gaussian Splatting from sparse multi-view RGB images, then runs a physically-informed event simulation pipeline with adaptive trajectory interpolation and contrast-threshold modeling.",
+    links: [{ label: "arXiv", href: "https://arxiv.org/abs/2505.15287" }],
+  },
+  {
+    title:
+      "Privacy-Preserving Detection Method for Transmission Lines Based on Edge Collaboration",
+    authors: "Quan Shi*, **Kaiyuan Deng***",
+    venue: "IEEE TrustCom 2024",
+    year: 2024,
+    abstract:
+      "SecYOLOv7, a secure single-stage detector for privacy-preserving transmission-line inspection. Uses Shamir secret-sharing-based MPC across two non-colluding edge servers to perform Secure Feature Contraction, Secure Bounding-Box Prediction, and Secure Object Classification. Maintains computation error around 1e-4 with 2.113s runtime and 95.15 MB communication overhead.",
+  },
+];
+
+// group by year, descending
+const grouped = publications.reduce(
+  (acc, p) => {
+    (acc[p.year] ??= []).push(p);
+    return acc;
+  },
+  {} as Record<number, typeof publications>,
+);
+const years = Object.keys(grouped)
+  .map(Number)
+  .sort((a, b) => b - a);
+
+// tiny markdown-ish bold renderer for **text**
+function renderAuthors(s: string) {
+  return s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+---
+
+<PageLayout title="Publications" heading="Publications">
+  <p class="muted intro">
+    <span class="star">*</span> denotes equal contribution. For an up-to-date list,
+    see my
+    <a
+      class="under"
+      href="https://scholar.google.com/citations?user=_a1vLEYAAAAJ&hl=en"
+      target="_blank"
+      rel="noopener noreferrer">Google Scholar profile</a>.
+  </p>
+
+  {
+    years.map((year) => (
+      <section class="block">
+        <h2 class="section-title">{year}</h2>
+        <ol class="pubs">
+          {grouped[year].map((p) => (
+            <li class="pub">
+              <div class="pub-title">{p.title}</div>
+              <div class="pub-authors" set:html={renderAuthors(p.authors)} />
+              <div class="pub-meta-row">
+                <span class="pub-venue">{p.venue}</span>
+                {p.links && p.links.length > 0 && (
+                  <span class="pub-links">
+                    {p.links.map((l) => {
+                      const variant =
+                        l.label.toLowerCase() === "arxiv"
+                          ? "pub-link-arxiv"
+                          : l.label.toLowerCase() === "code"
+                            ? "pub-link-code"
+                            : "";
+                      return (
+                        <a
+                          href={l.href}
+                          class:list={["pub-link", variant]}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          [{l.label}]
+                        </a>
+                      );
+                    })}
+                  </span>
+                )}
+              </div>
+              <p class="pub-abs">{p.abstract}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))
+  }
+
+  <PageQuote
+    text="Only I know you love pain. Pain makes you feel the joy is real."
+  />
+</PageLayout>
+
+<style>
+  .intro {
+    margin-bottom: 1.25rem;
+  }
+  .star {
+    color: var(--fg-subtle);
+  }
+  .block {
+    margin-top: 2rem;
+  }
+  .pubs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: pub;
+  }
+  .pub {
+    padding: 1rem 0 1.1rem;
+    border-bottom: 1px dashed var(--border);
+  }
+  .pub:last-child {
+    border-bottom: 0;
+  }
+  .pub-title {
+    color: var(--fg);
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+  }
+  .pub-authors {
+    color: var(--fg-muted);
+    font-size: 0.92rem;
+    margin-bottom: 0.2rem;
+  }
+  .pub-authors :global(strong) {
+    color: var(--fg);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--fg-muted);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .pub-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+    margin-bottom: 0.55rem;
+  }
+  .pub-venue {
+    display: inline-block;
+    color: var(--fg-subtle);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.18rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+  }
+  .pub-links {
+    display: inline-flex;
+    gap: 0.35rem;
+  }
+  .pub-link {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--fg-muted);
+    padding: 0.18rem 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition:
+      color var(--t-base),
+      border-color var(--t-base),
+      background var(--t-base);
+  }
+  .pub-link:hover {
+    color: var(--fg);
+    border-color: var(--border-strong);
+    background: var(--bg-elev);
+  }
+  .pub-link-arxiv {
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.10);
+    border-color: rgba(239, 68, 68, 0.28);
+  }
+  .pub-link-arxiv:hover {
+    color: #fecaca;
+    background: rgba(239, 68, 68, 0.18);
+    border-color: rgba(239, 68, 68, 0.5);
+  }
+  .pub-link-code {
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.10);
+    border-color: rgba(34, 197, 94, 0.28);
+  }
+  .pub-link-code:hover {
+    color: #bbf7d0;
+    background: rgba(34, 197, 94, 0.18);
+    border-color: rgba(34, 197, 94, 0.5);
+  }
+  .pub-abs {
+    color: var(--fg-muted);
+    font-size: 0.93rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .under {
+    color: var(--link);
+    border-bottom: 1px solid var(--border-strong);
+    transition:
+      color var(--t-base),
+      border-color var(--t-base);
+  }
+  .under:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--fg);
+  }
+</style>

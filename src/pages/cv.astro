@@ -1,0 +1,199 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import PageQuote from "../components/PageQuote.astro";
+---
+
+<PageLayout title="CV" heading="Curriculum Vitae">
+  <p class="muted intro">
+    A snapshot of my background. See <a class="under" href="/publications/"
+      >Publications</a> for paper details.
+  </p>
+
+  <section class="block">
+    <h2 class="section-title">Education</h2>
+    <div class="row">
+      <div>
+        <div class="title">The University of Arizona</div>
+        <div class="sub">
+          Ph.D. in Computer Engineering · GPA 4.00/4.00 (Top 1%) · Advisor:
+          <a class="under" href="https://xiaolongma2016.com/">Xiaolong Ma</a>
+        </div>
+      </div>
+      <div class="meta">Aug 2025 to Present</div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="title">Clemson University</div>
+        <div class="sub">
+          Ph.D. in Computer Engineering · Advisor: Xiaolong Ma
+        </div>
+      </div>
+      <div class="meta">Aug 2024 to Jul 2025</div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="title">
+          University of Electronic Science and Technology of China
+        </div>
+        <div class="sub">
+          B.Eng. in Communication Engineering · GPA 3.83/4.00 (Top 15%) ·
+          Advisor: <a
+            class="under"
+            href="https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11006?yxsh=08"
+            >Hong Qu</a>
+        </div>
+      </div>
+      <div class="meta">Sep 2020 to Jun 2024</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Selected Publications</h2>
+    <div class="row">
+      <div>
+        <div class="title">
+          Forget-It-All: Multi-Concept Machine Unlearning via Concept-Aware
+          Neuron Masking
+        </div>
+        <div class="sub">
+          <strong>Kaiyuan Deng</strong>, Bo Hui, Gen Li, Jie Ji, Minghai Qin,
+          Geng Yuan, Xiaolong Ma
+        </div>
+      </div>
+      <div class="meta">ICML 2026</div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="title">
+          Forget Many, Forget Right: Scalable and Precise Concept Unlearning in
+          Diffusion Models
+        </div>
+        <div class="sub">
+          <strong>Kaiyuan Deng</strong>, Gen Li, Yang Xiao, Bo Hui, Xiaolong Ma
+        </div>
+      </div>
+      <div class="meta">ICLR 2026</div>
+    </div>
+    <p class="more-link">
+      <a class="under" href="/publications/">Full list →</a>
+    </p>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Skills</h2>
+    <ul class="skills">
+      <li>
+        <span class="k">Languages</span>
+        <span>Python (5y), C++ (2y), Java (2y), MATLAB</span>
+      </li>
+      <li>
+        <span class="k">Frameworks</span>
+        <span>PyTorch (3y), Diffusers</span>
+      </li>
+      <li>
+        <span class="k">Languages (Human)</span>
+        <span>Mandarin (native), English (IELTS 7.5)</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Honors &amp; Awards</h2>
+    <div class="row">
+      <div>
+        <div class="title">
+          Second Prize (Top 4%), 7th UESTC Mathematical Modeling Competition
+        </div>
+      </div>
+      <div class="meta">May 2021</div>
+    </div>
+    <div class="row">
+      <div>
+        <div class="title">Second Prize Scholarship, UESTC</div>
+      </div>
+      <div class="meta">Dec 2021</div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2 class="section-title">Service &amp; Volunteer</h2>
+    <div class="row">
+      <div>
+        <div class="title">
+          Volunteer activities at UESTC, serving local libraries and communities
+        </div>
+      </div>
+      <div class="meta">2020 / 2021</div>
+    </div>
+  </section>
+
+  <PageQuote
+    text="True love can break the curse. But who would ever love a freak?"
+  />
+</PageLayout>
+
+<style>
+  .intro {
+    margin-bottom: 1.25rem;
+  }
+  .block {
+    margin-top: 2.25rem;
+  }
+  .bullets {
+    list-style: none;
+    padding: 0;
+  }
+  .bullets li {
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .bullets li:last-child {
+    border-bottom: 0;
+  }
+  .skills {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .skills li {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--border);
+    align-items: baseline;
+  }
+  .skills li:last-child {
+    border-bottom: 0;
+  }
+  .k {
+    color: var(--fg-subtle);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .more-link {
+    margin-top: 0.85rem;
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    text-align: right;
+  }
+  .under {
+    color: var(--link);
+    border-bottom: 1px solid var(--border-strong);
+    transition:
+      color var(--t-base),
+      border-color var(--t-base);
+  }
+  .under:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--fg);
+  }
+
+  @media (max-width: 640px) {
+    .skills li {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+  }
+</style>

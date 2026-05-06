@@ -1,0 +1,369 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProfileSidebar from "../components/ProfileSidebar.astro";
+import PageQuote from "../components/PageQuote.astro";
+---
+
+<BaseLayout>
+  <div class="container-wide layout">
+    <div class="sidebar">
+      <ProfileSidebar />
+    </div>
+
+    <article class="content prose">
+      <h1 class="hello">Hi, I'm Kaiyuan.</h1>
+      <p class="lead">
+        I'm a Ph.D. student at the University of Arizona, advised by Prof.
+        <a class="bare under" href="https://xiaolongma2016.com/">Xiaolong Ma</a
+        >. Before that, I received my B.Eng. in Communication Engineering from
+        <a class="bare under" href="https://www.uestc.edu.cn/">UESTC</a> in 2024.
+      </p>
+      <p>
+        My research sits at the intersection of <strong>Generative Models</strong
+        > and <strong>Trustworthy AI</strong>.
+      </p>
+      <p class="muted small">
+        You can reach me at <a class="bare under" href="mailto:kaiyuan0415@arizona.edu">
+          kaiyuan0415@arizona.edu</a>.
+      </p>
+      <p class="callout">
+        If you can provide GPU or compute resources, I'd be glad to collaborate.
+        Please feel free to reach out.
+      </p>
+
+      <section class="block">
+        <h2 class="section-title">Education</h2>
+        <div class="row">
+          <div>
+            <div class="title">
+              <a class="bare under" href="https://ece.engineering.arizona.edu/">
+                The University of Arizona</a>
+            </div>
+            <div class="sub">
+              Ph.D. in Computer Engineering · GPA 4.00/4.00 · advised by Prof.
+              <a class="bare under" href="https://xiaolongma2016.com/"
+                >Xiaolong Ma</a>
+            </div>
+          </div>
+          <div class="meta">Aug 2025 to Present</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="title">
+              <a class="bare under" href="https://www.clemson.edu/cecas/departments/ece/">
+                Clemson University</a>
+            </div>
+            <div class="sub">
+              Ph.D. in Computer Engineering · advised by Prof. <a
+                class="bare under"
+                href="https://xiaolongma2016.com/">Xiaolong Ma</a>
+            </div>
+          </div>
+          <div class="meta">Aug 2024 to Jul 2025</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="title">
+              <a class="bare under" href="https://www.uestc.edu.cn/">
+                University of Electronic Science and Technology of China</a>
+            </div>
+            <div class="sub">
+              B.Eng. in Communication Engineering · GPA 3.83/4.00 · advised by
+              Prof. <a
+                class="bare under"
+                href="https://yjsjy.uestc.edu.cn/gmis/jcsjgl/dsfc/dsgrjj/11006?yxsh=08">
+                Hong Qu</a>
+            </div>
+          </div>
+          <div class="meta">Sep 2020 to Jun 2024</div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2 class="section-title">Selected Publications</h2>
+        <div class="row">
+          <div>
+            <div class="title">
+              Forget-It-All: Multi-Concept Machine Unlearning via Concept-Aware
+              Neuron Masking
+            </div>
+            <div class="sub">
+              <strong>Kaiyuan Deng</strong>, Bo Hui, Gen Li, Jie Ji, Minghai
+              Qin, Geng Yuan, Xiaolong Ma
+            </div>
+            <div class="row-actions">
+              <a
+                class="pub-link pub-link-arxiv"
+                href="https://arxiv.org/abs/2601.06162"
+                target="_blank"
+                rel="noopener noreferrer">[arXiv]</a>
+              <a
+                class="pub-link pub-link-code"
+                href="https://github.com/kaiyuan02415/Forget-It-All"
+                target="_blank"
+                rel="noopener noreferrer">[Code]</a>
+            </div>
+          </div>
+          <div class="meta">ICML 2026</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="title">
+              Forget Many, Forget Right: Scalable and Precise Concept Unlearning
+              in Diffusion Models
+            </div>
+            <div class="sub">
+              <strong>Kaiyuan Deng</strong>, Gen Li, Yang Xiao, Bo Hui, Xiaolong
+              Ma
+            </div>
+            <div class="row-actions">
+              <a
+                class="pub-link pub-link-arxiv"
+                href="https://arxiv.org/abs/2601.06163"
+                target="_blank"
+                rel="noopener noreferrer">[arXiv]</a>
+              <a
+                class="pub-link pub-link-code"
+                href="https://github.com/kaiyuan02415/ScaPre"
+                target="_blank"
+                rel="noopener noreferrer">[Code]</a>
+            </div>
+          </div>
+          <div class="meta">ICLR 2026</div>
+        </div>
+        <p class="more-link">
+          <a class="bare under" href="/publications/"
+            >See all publications →</a>
+        </p>
+      </section>
+
+      <section class="block">
+        <h2 class="section-title">News</h2>
+        <div class="row">
+          <div>
+            <div class="title">
+              <span class="tag tag-paper">[Paper]</span>
+              <em>Forget-It-All</em> (FIA) accepted to ICML 2026.
+            </div>
+          </div>
+          <div class="meta">2026</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="title">
+              <span class="tag tag-paper">[Paper]</span>
+              <em>ScaPre</em> accepted to ICLR 2026.
+            </div>
+          </div>
+          <div class="meta">2026</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="title">
+              <span class="tag tag-life">[Life]</span>
+              Started Ph.D. at the University of Arizona.
+            </div>
+          </div>
+          <div class="meta">Aug 2025</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="title">
+              <span class="tag tag-life">[Life]</span>
+              Left Chengdu, the city I grew up in.
+            </div>
+          </div>
+          <div class="meta">Jul 2024</div>
+        </div>
+        <div class="row">
+          <div>
+            <div class="title">
+              <span class="tag tag-game">[Game]</span>
+              Reached <strong>Radiant</strong> tier in Valorant.
+            </div>
+          </div>
+          <div class="meta">Apr 2024</div>
+        </div>
+      </section>
+
+      <PageQuote text="A thing of beauty I know." />
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  .sidebar {
+    padding-top: 0.25rem;
+  }
+
+  .content {
+    max-width: 720px;
+  }
+
+  .hello {
+    font-size: 2rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .lead {
+    font-size: 1.05rem;
+    color: var(--fg);
+  }
+
+  .small {
+    font-size: 0.92rem;
+  }
+
+  .callout {
+    margin-top: 0.85rem;
+    padding: 0.85rem 1rem;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bg-elev) 80%, transparent),
+      color-mix(in srgb, var(--bg-elev-2) 80%, transparent)
+    );
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent-soft);
+    border-radius: var(--radius);
+    color: var(--fg);
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .block {
+    margin-top: 2.5rem;
+  }
+
+  .interests {
+    list-style: none;
+    padding: 0;
+  }
+
+  .interests li {
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--border);
+    color: var(--fg);
+  }
+  .interests li:last-child {
+    border-bottom: 0;
+  }
+
+  .more-link {
+    margin-top: 0.85rem;
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    text-align: right;
+  }
+
+  /* Author name (own) underlined in publication rows */
+  .block .row .sub :global(strong) {
+    text-decoration: underline;
+    text-decoration-color: var(--fg-muted);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .row-actions {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+  .pub-link {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--fg-muted);
+    padding: 0.18rem 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition:
+      color var(--t-base),
+      border-color var(--t-base),
+      background var(--t-base);
+  }
+  .pub-link:hover {
+    color: var(--fg);
+    border-color: var(--border-strong);
+    background: var(--bg-elev);
+  }
+  .pub-link-arxiv {
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.10);
+    border-color: rgba(239, 68, 68, 0.28);
+  }
+  .pub-link-arxiv:hover {
+    color: #fecaca;
+    background: rgba(239, 68, 68, 0.18);
+    border-color: rgba(239, 68, 68, 0.5);
+  }
+  .pub-link-code {
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.10);
+    border-color: rgba(34, 197, 94, 0.28);
+  }
+  .pub-link-code:hover {
+    color: #bbf7d0;
+    background: rgba(34, 197, 94, 0.18);
+    border-color: rgba(34, 197, 94, 0.5);
+  }
+
+  /* News tags: bracket pill, colored by category */
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.05rem 0.4rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    vertical-align: 0.05em;
+    white-space: nowrap;
+  }
+  .tag-paper {
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.28);
+  }
+  .tag-game {
+    color: #93c5fd;
+    background: rgba(59, 130, 246, 0.13);
+    border: 1px solid rgba(59, 130, 246, 0.30);
+  }
+  .tag-life {
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.28);
+  }
+
+  /* In-prose link style */
+  .under {
+    border-bottom: 1px solid var(--border-strong);
+    color: var(--link);
+    transition:
+      color var(--t-base),
+      border-color var(--t-base);
+  }
+  .under:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--fg);
+  }
+
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .hello {
+      font-size: 1.6rem;
+    }
+  }
+</style>

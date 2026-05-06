@@ -1,0 +1,17 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+---
+
+<PageLayout title="404" heading="404">
+  <p>This page has wandered off into the dark.</p>
+  <p>
+    <a class="under" href="/">← Back home</a>
+  </p>
+</PageLayout>
+
+<style>
+  .under {
+    color: var(--link);
+    border-bottom: 1px solid var(--border-strong);
+  }
+</style>

@@ -1,0 +1,126 @@
+---
+import { SITE, NAV } from "../consts";
+
+const { pathname } = Astro.url;
+const normalize = (p: string) => (p.endsWith("/") ? p : p + "/");
+const current = normalize(pathname);
+---
+
+<header class="site-header">
+  <div class="container-wide hdr-inner">
+    <a href="/" class="brand" aria-label="Home">
+      <span class="brand-name">{SITE.title}</span>
+      <span class="brand-dot"></span>
+      <span class="brand-sub">{SITE.subtitle}</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <ul>
+        {
+          NAV.map((item) => {
+            const active =
+              item.href === "/"
+                ? current === "/"
+                : current.startsWith(item.href);
+            return (
+              <li>
+                <a href={item.href} class={active ? "active" : ""}>
+                  {item.name}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hdr-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    color: var(--fg);
+  }
+
+  .brand-name {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .brand-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--fg-subtle);
+    display: inline-block;
+  }
+
+  .brand-sub {
+    color: var(--fg-subtle);
+    font-size: 0.85rem;
+  }
+
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.25rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav a {
+    display: inline-block;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+    color: var(--fg-muted);
+    border-radius: var(--radius);
+    transition: color var(--t-base), background var(--t-base);
+  }
+
+  .nav a:hover {
+    color: var(--fg);
+    background: var(--bg-elev);
+  }
+
+  .nav a.active {
+    color: var(--fg);
+    background: var(--bg-elev);
+  }
+
+  @media (max-width: 640px) {
+    .brand-sub {
+      display: none;
+    }
+    .brand-dot {
+      display: none;
+    }
+    .hdr-inner {
+      gap: 0.75rem;
+    }
+    .nav a {
+      padding: 0.35rem 0.55rem;
+      font-size: 0.85rem;
+    }
+  }
+</style>
