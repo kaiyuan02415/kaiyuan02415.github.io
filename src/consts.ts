@@ -2,7 +2,7 @@ export const SITE = {
   title: "Kaiyuan Deng",
   subtitle: "Refused",
   description:
-    "Kaiyuan Deng. Ph.D. student at the University of Arizona, working on Generative Models and Trustworthy AI.",
+    "Kaiyuan Deng. Ph.D. candidate at the University of Arizona, working on Generative Models and Trustworthy AI.",
   url: "https://kaiyuan02415.github.io",
   author: "Kaiyuan Deng",
 };
