@@ -13,27 +13,79 @@ const current = normalize(pathname);
       <span class="brand-dot"></span>
       <span class="brand-sub">{SITE.subtitle}</span>
     </a>
-    <nav class="nav" aria-label="Primary">
-      <ul>
-        {
-          NAV.map((item) => {
-            const active =
-              item.href === "/"
-                ? current === "/"
-                : current.startsWith(item.href);
-            return (
-              <li>
-                <a href={item.href} class={active ? "active" : ""}>
-                  {item.name}
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </nav>
+    <div class="hdr-right">
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          {
+            NAV.map((item) => {
+              const active =
+                item.href === "/"
+                  ? current === "/"
+                  : current.startsWith(item.href);
+              return (
+                <li>
+                  <a href={item.href} class={active ? "active" : ""}>
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Toggle color theme"
+        title="Toggle light / dark"
+      >
+        <svg
+          class="icon-moon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg
+          class="icon-sun"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="4"></circle>
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+          ></path>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
+
+<script>
+  const btn = document.getElementById("theme-toggle");
+  btn?.addEventListener("click", () => {
+    const isLight = document.documentElement.dataset.theme === "light";
+    const next = isLight ? "dark" : "light";
+    document.documentElement.dataset.theme = next;
+    try {
+      localStorage.setItem("theme", next);
+    } catch (e) {}
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta)
+      meta.setAttribute("content", next === "light" ? "#e7f3ef" : "#0b0b0c");
+  });
+</script>
 
 <style>
   .site-header {
@@ -81,12 +133,58 @@ const current = normalize(pathname);
     font-size: 0.85rem;
   }
 
+  .hdr-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .nav ul {
     list-style: none;
     display: flex;
     gap: 0.25rem;
     padding: 0;
     margin: 0;
+  }
+
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--fg-muted);
+    transition:
+      color var(--t-base),
+      border-color var(--t-base),
+      background var(--t-base);
+  }
+
+  .theme-toggle:hover {
+    color: var(--fg);
+    border-color: var(--border-strong);
+    background: var(--bg-elev);
+  }
+
+  .theme-toggle svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Show the icon for the current theme; default (no attr) is dark. */
+  .theme-toggle .icon-sun {
+    display: none;
+  }
+  .theme-toggle .icon-moon {
+    display: block;
+  }
+  :global([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
+  :global([data-theme="light"]) .theme-toggle .icon-sun {
+    display: block;
   }
 
   .nav a {

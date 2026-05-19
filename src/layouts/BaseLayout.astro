@@ -20,6 +20,20 @@ const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0b0b0c" />
+    {/* Set theme before paint to avoid a flash. Default is dark. */}
+    <script is:inline>
+      (() => {
+        let t = "dark";
+        try {
+          if (localStorage.getItem("theme") === "light") t = "light";
+        } catch (e) {}
+        document.documentElement.dataset.theme = t;
+        if (t === "light") {
+          const m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute("content", "#e7f3ef");
+        }
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={Astro.url.toString()} />
     <title>{pageTitle}</title>
