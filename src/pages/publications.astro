@@ -220,7 +220,7 @@ function renderAuthors(s: string) {
   .pub-link {
     font-family: var(--font-mono);
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.02em;
     color: var(--fg-muted);
     padding: 0.18rem 0.4rem;
@@ -236,35 +236,36 @@ function renderAuthors(s: string) {
     border-color: var(--border-strong);
     background: var(--bg-elev);
   }
+  /* Each variant: border color matches the text color. */
   .pub-link-arxiv {
     color: #fca5a5;
     background: rgba(239, 68, 68, 0.10);
-    border-color: rgba(239, 68, 68, 0.28);
+    border-color: #fca5a5;
   }
   .pub-link-arxiv:hover {
     color: #fecaca;
     background: rgba(239, 68, 68, 0.18);
-    border-color: rgba(239, 68, 68, 0.5);
+    border-color: #fecaca;
   }
   .pub-link-code {
     color: #86efac;
     background: rgba(34, 197, 94, 0.10);
-    border-color: rgba(34, 197, 94, 0.28);
+    border-color: #86efac;
   }
   .pub-link-code:hover {
     color: #bbf7d0;
     background: rgba(34, 197, 94, 0.18);
-    border-color: rgba(34, 197, 94, 0.5);
+    border-color: #bbf7d0;
   }
   .pub-link-project {
     color: #93c5fd;
     background: rgba(59, 130, 246, 0.10);
-    border-color: rgba(59, 130, 246, 0.28);
+    border-color: #93c5fd;
   }
   .pub-link-project:hover {
     color: #bfdbfe;
     background: rgba(59, 130, 246, 0.18);
-    border-color: rgba(59, 130, 246, 0.5);
+    border-color: #bfdbfe;
   }
   .pub-abs {
     color: var(--fg-muted);
