@@ -354,37 +354,38 @@ html {
 }
 
 /* Colored chips (pub links, news tags) are tuned for the dark backdrop;
-   re-tune their text contrast for light mode. */
-[data-theme="light"] .pub-link-arxiv,
-[data-theme="light"] .tag-paper {
+   re-tune their text contrast for light mode. The :root prefix lifts
+   specificity above Astro's scoped component styles. */
+:root[data-theme="light"] .pub-link-arxiv,
+:root[data-theme="light"] .tag-paper {
   color: #dc2626;
-  background: rgba(239, 68, 68, 0.1);
-  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.13);
+  border-color: rgba(239, 68, 68, 0.45);
 }
-[data-theme="light"] .pub-link-arxiv:hover {
+:root[data-theme="light"] .pub-link-arxiv:hover {
   color: #b91c1c;
-  background: rgba(239, 68, 68, 0.16);
-  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.6);
 }
-[data-theme="light"] .pub-link-code,
-[data-theme="light"] .tag-life {
+:root[data-theme="light"] .pub-link-code,
+:root[data-theme="light"] .tag-life {
   color: #15803d;
-  background: rgba(34, 197, 94, 0.12);
-  border-color: rgba(34, 197, 94, 0.32);
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.45);
 }
-[data-theme="light"] .pub-link-code:hover {
+:root[data-theme="light"] .pub-link-code:hover {
   color: #166534;
-  background: rgba(34, 197, 94, 0.18);
-  border-color: rgba(34, 197, 94, 0.5);
+  background: rgba(34, 197, 94, 0.22);
+  border-color: rgba(34, 197, 94, 0.6);
 }
-[data-theme="light"] .pub-link-project,
-[data-theme="light"] .tag-game {
+:root[data-theme="light"] .pub-link-project,
+:root[data-theme="light"] .tag-game {
   color: #2563eb;
-  background: rgba(59, 130, 246, 0.1);
-  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.13);
+  border-color: rgba(59, 130, 246, 0.45);
 }
-[data-theme="light"] .pub-link-project:hover {
+:root[data-theme="light"] .pub-link-project:hover {
   color: #1d4ed8;
-  background: rgba(59, 130, 246, 0.16);
-  border-color: rgba(59, 130, 246, 0.5);
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.6);
 }
