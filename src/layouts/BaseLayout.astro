@@ -19,7 +19,7 @@ const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0b0b0c" />
+    <meta name="theme-color" content="#000000" />
     {/* Set theme before paint to avoid a flash. Default is dark. */}
     <script is:inline>
       (() => {
@@ -30,7 +30,7 @@ const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
         document.documentElement.dataset.theme = t;
         if (t === "light") {
           const m = document.querySelector('meta[name="theme-color"]');
-          if (m) m.setAttribute("content", "#e7f3ef");
+          if (m) m.setAttribute("content", "#ffffff");
         }
       })();
     </script>

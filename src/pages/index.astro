@@ -92,12 +92,12 @@ import ProfileSidebar from "../components/ProfileSidebar.astro";
             </div>
             <div class="row-actions">
               <a
-                class="pub-link bare pub-link-arxiv"
+                class="pub-link bare"
                 href="https://arxiv.org/abs/2601.06163"
                 target="_blank"
                 rel="noopener noreferrer">[arXiv]</a>
               <a
-                class="pub-link bare pub-link-code"
+                class="pub-link bare"
                 href="https://github.com/kaiyuan02415/Forget-It-All"
                 target="_blank"
                 rel="noopener noreferrer">[Code]</a>
@@ -117,12 +117,12 @@ import ProfileSidebar from "../components/ProfileSidebar.astro";
             </div>
             <div class="row-actions">
               <a
-                class="pub-link bare pub-link-arxiv"
+                class="pub-link bare"
                 href="https://arxiv.org/abs/2601.06162"
                 target="_blank"
                 rel="noopener noreferrer">[arXiv]</a>
               <a
-                class="pub-link bare pub-link-code"
+                class="pub-link bare"
                 href="https://github.com/kaiyuan02415/ScaPre"
                 target="_blank"
                 rel="noopener noreferrer">[Code]</a>
@@ -141,7 +141,7 @@ import ProfileSidebar from "../components/ProfileSidebar.astro";
         <div class="row">
           <div>
             <div class="title">
-              <span class="tag tag-paper">[Paper]</span>
+              <span class="tag tag-paper">Paper</span>
               <em>Forget-It-All</em> (FIA) accepted to ICML 2026.
             </div>
           </div>
@@ -150,7 +150,7 @@ import ProfileSidebar from "../components/ProfileSidebar.astro";
         <div class="row">
           <div>
             <div class="title">
-              <span class="tag tag-paper">[Paper]</span>
+              <span class="tag tag-paper">Paper</span>
               <em>ScaPre</em> accepted to ICLR 2026.
             </div>
           </div>
@@ -159,7 +159,7 @@ import ProfileSidebar from "../components/ProfileSidebar.astro";
         <div class="row">
           <div>
             <div class="title">
-              <span class="tag tag-life">[Life]</span>
+              <span class="tag tag-life">Life</span>
               Started Ph.D. at the University of Arizona.
             </div>
           </div>
@@ -168,7 +168,7 @@ import ProfileSidebar from "../components/ProfileSidebar.astro";
         <div class="row">
           <div>
             <div class="title">
-              <span class="tag tag-life">[Life]</span>
+              <span class="tag tag-life">Life</span>
               Left Chengdu, the city I grew up in.
             </div>
           </div>
@@ -283,29 +283,7 @@ import ProfileSidebar from "../components/ProfileSidebar.astro";
     border-color: var(--border-strong);
     background: var(--bg-elev);
   }
-  /* Each variant: border color matches the text color. */
-  .pub-link-arxiv {
-    color: #fca5a5;
-    background: rgba(239, 68, 68, 0.10);
-    border-color: #fca5a5;
-  }
-  .pub-link-arxiv:hover {
-    color: #fecaca;
-    background: rgba(239, 68, 68, 0.18);
-    border-color: #fecaca;
-  }
-  .pub-link-code {
-    color: #93c5fd;
-    background: rgba(59, 130, 246, 0.10);
-    border-color: #93c5fd;
-  }
-  .pub-link-code:hover {
-    color: #bfdbfe;
-    background: rgba(59, 130, 246, 0.18);
-    border-color: #bfdbfe;
-  }
-
-  /* News tags: bracket pill, colored by category */
+  /* News tags: neutral pill */
   .tag {
     font-family: var(--font-mono);
     font-size: 0.78rem;
