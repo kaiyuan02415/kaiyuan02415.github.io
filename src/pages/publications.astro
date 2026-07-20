@@ -1,6 +1,5 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import PageQuote from "../components/PageQuote.astro";
 
 interface Pub {
   title: string;
@@ -147,10 +146,6 @@ function renderAuthors(s: string) {
       </section>
     ))
   }
-
-  <PageQuote
-    text="You mistake stars reflected in a pond for the night sky."
-  />
 </PageLayout>
 
 <style>

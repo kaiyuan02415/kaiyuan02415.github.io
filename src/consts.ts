@@ -1,6 +1,5 @@
 export const SITE = {
   title: "Kaiyuan Deng",
-  subtitle: "Refused",
   description:
     "Kaiyuan Deng. Ph.D. candidate at the University of Arizona, working on Generative Models and Trustworthy AI.",
   url: "https://kaiyuan02415.github.io",
@@ -28,11 +27,20 @@ export const SOCIALS = [
     href: "https://www.linkedin.com/in/kaiyuan-deng-8a6285295/",
     icon: "linkedin",
   },
+  {
+    name: "BiliBili",
+    href: "https://space.bilibili.com/509842792/video",
+    icon: "bilibili",
+  },
+  {
+    name: "Steam",
+    href: "https://steamcommunity.com/profiles/76561198819117649/",
+    icon: "steam",
+  },
 ];
 
 export const NAV = [
   { name: "About", href: "/" },
   { name: "Publications", href: "/publications/" },
   { name: "CV", href: "/cv/" },
-  { name: "More", href: "/more/" },
 ];
