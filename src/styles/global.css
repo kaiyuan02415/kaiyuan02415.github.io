@@ -59,8 +59,8 @@ a {
   --font-mono: ui-monospace, "JetBrains Mono", SFMono-Regular, Menlo, Monaco,
     Consolas, monospace;
 
-  --container: 760px;
-  --container-wide: 1080px;
+  --container: 880px;
+  --container-wide: 1200px;
 
   --radius: 6px;
   --radius-lg: 10px;
