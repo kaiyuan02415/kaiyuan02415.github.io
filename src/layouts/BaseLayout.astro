@@ -19,18 +19,18 @@ const pageTitle = title ? `${title} · ${SITE.title}` : SITE.title;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#000000" />
-    {/* Set theme before paint to avoid a flash. Default is dark. */}
+    <meta name="theme-color" content="#ffffff" />
+    {/* Set theme before paint to avoid a flash. Default is light. */}
     <script is:inline>
       (() => {
-        let t = "dark";
+        let t = "light";
         try {
-          if (localStorage.getItem("theme") === "light") t = "light";
+          if (localStorage.getItem("theme") === "dark") t = "dark";
         } catch (e) {}
         document.documentElement.dataset.theme = t;
-        if (t === "light") {
+        if (t === "dark") {
           const m = document.querySelector('meta[name="theme-color"]');
-          if (m) m.setAttribute("content", "#ffffff");
+          if (m) m.setAttribute("content", "#000000");
         }
       })();
     </script>
